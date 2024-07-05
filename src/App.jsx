@@ -4,7 +4,7 @@ import { Button, Container, Form, Row, Col, Card } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
-  const socket = useMemo(() => io(process.env.REACT_APP_API), []);
+  const socket = useMemo(() => io("https://chat-backend-quick.vercel.app"), []);
 
 
   const [msg, setMsg] = useState("");

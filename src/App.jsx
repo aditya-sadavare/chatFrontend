@@ -1,12 +1,11 @@
-// App.js
-
 import React, { useEffect, useMemo, useState } from "react";
 import { io } from "socket.io-client";
 import { Button, Container, Form, Row, Col, Card } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
-  const socket = useMemo(() => io("http://localhost:5000"), []);
+  const socket = useMemo(() => io(process.env.REACT_APP_API), []);
+
 
   const [msg, setMsg] = useState("");
   const [msgs, setMsgs] = useState([]);
